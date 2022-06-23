@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
+<div class="root">
   <Navbar />
   <HomeSlider />
   <main class="d-flex justify-content-center "> 
@@ -24,9 +25,20 @@ import Navbar from '@/components/Navbar.vue'
       </div>
   </main>
   <div>
-      <InputFiels />
+  <div class="row">
+        <div class="col">
+            <InputFiels />
+        </div>
+        <div class="col">
+           <InputFiels />
+        </div>
+      </div>
   </div>
+</div>
 </template>
 
 <style scoped>
+.root{
+  box-sizing: border-box;
+}
 </style>

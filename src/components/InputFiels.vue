@@ -126,8 +126,9 @@ onMounted(async ()=>{
 
 <style scoped>
 .form{
-    width:400px;
+    width:600px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 .mainDiv{
    background-color: rgb(215, 215, 215);
