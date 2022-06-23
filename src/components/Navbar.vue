@@ -1,9 +1,20 @@
+<script setup>
+import {useCommonStore} from '@/stores/common.js'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const commonStore = useCommonStore()
+
+const modalOpenHandler = ()=>{
+  router.push('/')
+}
+</script>
+
 <template>
 <nav class="navbar navbar-light bg-light pst">
   <div class="container-fluid">
     <a class="navbar-brand title">হযরত শাহজালাল (র) জামে মসজিদ</a>
     <div class="">
-      <button class="btn btn-outline-success" type="submit">লগিন</button>
+      <button @click="modalOpenHandler" class="btn btn-outline-success" type="submit">লগিন ( ৳{{commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain}} )</button>
     </div>
   </div>
 </nav>

@@ -3,6 +3,8 @@ import { defineStore } from 'pinia'
 export const useCommonStore = defineStore({
   id: 'common',
   state: () => ({
+    loginIdData:'',
+    matchIdData:'010101',
     allInfo: [],
     allInfoCost: [],
 
@@ -19,6 +21,8 @@ export const useCommonStore = defineStore({
     masjidTotalImprovementAmountRemain:0,
   }),
   getters: {
+    getLoginIdData: (state) => state.loginIdData,
+    getMatchIdData: (state) => state.matchIdData,
     getAllInfo: (state) => state.allInfo,
     getDanBoxTotalAmount: (state) => state.danBoxTotalAmount,
     getBuySellTotalAmount: (state) => state.buySellTotalAmount,
@@ -31,6 +35,7 @@ export const useCommonStore = defineStore({
     getMasjidTotalImprovementAmountRemain: (state) => state.masjidTotalImprovementAmountRemain,
   },
   actions: {
+
     storeAllInfo(value) {
       this.allInfo = value
 
