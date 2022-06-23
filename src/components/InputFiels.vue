@@ -2,7 +2,13 @@
 import {ref, onMounted} from 'vue'
 import {collection,onSnapshot,addDoc} from 'firebase/firestore'
 import {db} from '@/firebase'
+import {useCommonStore} from '@/stores/common.js'
+import formatRelativeWithOptions from 'date-fns/esm/fp/formatRelativeWithOptions/index.js';
+const commonStore = useCommonStore()
+
 const getAllMasjidInformations = ref([])
+const loading = ref(false)
+
 const information = ref({
     Option:'',
     Name:'',
@@ -15,6 +21,7 @@ const information = ref({
 
     
 const informationStoreHandler = async ()=>{
+        loading.value = true
         await addDoc(collection(db,'totaldevelopmentamount'),{
             Option: information.value.Option,
             Name: information.value.Name,
@@ -23,30 +30,44 @@ const informationStoreHandler = async ()=>{
             Product: information.value.Product,
             Amount: information.value.Amount,
             Date: information.value.Date
+        }).then(()=>{
+
+            information.value.Option = ''
+            information.value.Name = ''
+            information.value.Phone = ''
+            information.value.Address = ''
+            information.value.Product = ''
+            information.value.Amount = ''
+            information.value.Date = String(new Date())
+
+            loading.value = false
+
         })
+
 }
 
-const getAllMasjidInformation = ()=>{
+const getAllMasjidInformation = async()=>{
     onSnapshot(collection(db,'totaldevelopmentamount'),(querySnapShot)=>{
     getAllMasjidInformations.value = []
-    querySnapShot.forEach(doc=>{
-        let data = {
-            id: doc.id,
-            Option: doc.data().Option,
-            Name: doc.data().Name,
-            Phone: doc.data().Phone,
-            Address: doc.data().Address,
-            Product: doc.data().Product,
-            Amount: doc.data().Amount,
-            Date: doc.data().Date,
-        }
-        getAllMasjidInformations.value.push(data)
-    })
+        querySnapShot.forEach(doc=>{
+            let data = {
+                id: doc.id,
+                Option: doc.data().Option,
+                Name: doc.data().Name,
+                Phone: doc.data().Phone,
+                Address: doc.data().Address,
+                Product: doc.data().Product,
+                Amount: doc.data().Amount,
+                Date: doc.data().Date,
+            }
+            getAllMasjidInformations.value.push(data)
+        })
+        commonStore.storeAllInfo(getAllMasjidInformations.value)
     })
 }
 
-onMounted(()=>{
-    getAllMasjidInformation()
+onMounted(async ()=>{
+  await  getAllMasjidInformation()
 })
 
 </script>
@@ -55,7 +76,7 @@ onMounted(()=>{
 <template>
     <div class="mainDiv">
         <form class="form" @submit.prevent="informationStoreHandler">
-        <legend>মসজিদের সকল তথ্য জমা করুন</legend>
+        <legend>মসজিদের সকল তথ্য/হিসাব জমা করুন</legend>
         <div class="mb-3">
             <label for="disabledSelect" class="form-label"></label>
             <select default id="disabledSelect" class="form-select" v-model="information.Option">
@@ -77,9 +98,9 @@ onMounted(()=>{
             <label for="TextInput3" class="form-label">ঠিকানা লিখুন</label>
             <input v-model="information.Address" required type="text" id="TextInput3" class="form-control" placeholder="ঠিকানা লিখুন">
         </div>
-        <div class="mb-3" v-if="information.Option!='' &&  information.Option==='জুম্মার দিনে জিনিস-পত্র বিক্রয়'">
-            <label for="TextInput4" class="form-label">জিনিসের বিবরণ লিখুন</label>
-            <textarea v-model="information.Product" required type="text" id="TextInput4" class="form-control" placeholder="জিনিসের বিবরণ লিখুন"></textarea>
+        <div class="mb-3" v-if="information.Option!='' &&  information.Option==='জুম্মার দিনে জিনিস-পত্র বিক্রয়' || information.Option==='মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা'">
+            <label for="TextInput4" class="form-label">বিবরণ লিখুন</label>
+            <textarea v-model="information.Product" required type="text" id="TextInput4" class="form-control" placeholder="মসজিদে কি ক্যাশ টাকা জমা দিয়েছেন নাকি কোন জিনিস দান করেছেন লিখুন"></textarea>
         </div>
         <div class="mb-3" v-if="information.Option!='' && (information.Option==='জুম্মার দিনে দান বক্সে জমা' || information.Option==='জুম্মার দিনে জিনিস-পত্র বিক্রয়' || information.Option==='মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা')">
             <label for="TextInput5" class="form-label">টাকার পরিমাণ লিখুন</label>
@@ -89,18 +110,17 @@ onMounted(()=>{
             <Datepicker v-model="information.Date" required></Datepicker>
         </div>
         <div v-if="information.Option!=''">
-            <button type="submit" class="btn btn-primary btnWidth mt-4">Submit</button>
+            <button :disabled="loading" type="submit" class="btn btn-primary btnWidth mt-4">Submit</button>
         </div>
     </form>
     </div>
-
-    <div>
-        <ul v-for="data in getAllMasjidInformations" :key="data.id">
+    <!-- <div>
+        <ul v-for="data in commonStore.getAllInfo" :key="data.id">
         <li>
             {{data}}
             </li>
         </ul>
-    </div>
+    </div> -->
 
 </template>
 

@@ -1,9 +1,32 @@
 <script setup>
-import HomeView from '@/components/HomeView.vue'
+import HomeSlider from '@/components/HomeSlider.vue'
+import InputFiels from '@/components/InputFiels.vue'
+import JummahBar from '@/components/JummahBarDanBox.vue'
+import JummahBarBikroyProduct from '@/components/JummahBarBikroyProduct.vue'
+import UnnoyonFund from '@/components/UnnoyonFund.vue'
+import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
-  <main>
-    <HomeView />
+  <Navbar />
+  <HomeSlider />
+  <main class="d-flex justify-content-center "> 
+     <div class="row">
+        <div class="col">
+            <JummahBar />
+        </div>
+        <div class="col">
+           <JummahBarBikroyProduct />
+        </div>
+        <div class="col">
+            <UnnoyonFund />
+        </div>
+      </div>
   </main>
+  <div>
+      <InputFiels />
+  </div>
 </template>
+
+<style scoped>
+</style>
