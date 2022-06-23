@@ -1,6 +1,7 @@
 <script setup>
 import HomeSlider from '@/components/HomeSlider.vue'
 import InputFiels from '@/components/InputFiels.vue'
+import CostFiels from '@/components/CostFiels.vue'
 import JummahBar from '@/components/JummahBarDanBox.vue'
 import JummahBarBikroyProduct from '@/components/JummahBarBikroyProduct.vue'
 import UnnoyonFund from '@/components/UnnoyonFund.vue'
@@ -30,7 +31,7 @@ import Navbar from '@/components/Navbar.vue'
             <InputFiels />
         </div>
         <div class="col">
-           <InputFiels />
+           <CostFiels />
         </div>
       </div>
   </div>

@@ -3,7 +3,6 @@ import {ref, onMounted} from 'vue'
 import {collection,onSnapshot,addDoc} from 'firebase/firestore'
 import {db} from '@/firebase'
 import {useCommonStore} from '@/stores/common.js'
-import formatRelativeWithOptions from 'date-fns/esm/fp/formatRelativeWithOptions/index.js';
 const commonStore = useCommonStore()
 
 const getAllMasjidInformations = ref([])
