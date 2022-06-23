@@ -63,7 +63,7 @@ onMounted(async ()=>{
 <template>
     <div class="mainDiv">
         <form class="form" @submit.prevent="informationStoreHandler">
-        <legend>মসজিদের সঞ্চতিত টাকা ব্যবহার করুন</legend>
+        <legend>মসজিদের সঞ্চিত টাকা ব্যবহার করুন</legend>
         <div class="mb-3">
             <label for="disabledSelect" class="form-label"></label>
             <select default id="disabledSelect" class="form-select" v-model="information.Option">
