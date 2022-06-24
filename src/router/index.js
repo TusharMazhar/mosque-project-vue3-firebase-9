@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/cost/:id',
       name: 'CostDetails',
       component: () => import('../views/CostDeatislInfo.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'Error',
+      component: () => import('../views/ErrorPage.vue')
     }
   ]
 })
