@@ -16,6 +16,9 @@ const commonStore = useCommonStore()
                 <div class="col">
                     <p>জমা হয়েছে</p>
                     <span>{{commonStore.getMasjidTotalImprovementAmount}}</span>
+                    <div class="mt-4"> 
+                      <button type="button" @click="router.push(`/${commonStore.id3}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+                    </div>
                 </div>
                 <div class="col">
                 |
@@ -23,10 +26,10 @@ const commonStore = useCommonStore()
                 <div class="col">
                     <p>খরচ হয়েছে</p>
                     <span>{{commonStore.getMasjidTotalImprovementCost}}</span>
+                    <div class="mt-4"> 
+                      <button type="button" @click="router.push(`/cost/${commonStore.id3}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-4"> 
-               <button type="button" @click="router.push(`/${commonStore.id3}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
             </div>
         </div>
         <div class="card-footer cardFooter">

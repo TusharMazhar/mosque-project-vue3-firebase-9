@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useCommonStore = defineStore({
+export const useCommonStore = defineStore('main',{
   id: 'common',
   state: () => ({
     loginIdData:'',
@@ -78,5 +78,5 @@ export const useCommonStore = defineStore({
          }
       })
     }
-  }
+  },
 })
