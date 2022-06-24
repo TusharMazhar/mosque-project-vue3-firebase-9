@@ -8,8 +8,8 @@ const commonStore = useCommonStore()
 </script>
 
 <template>
-  <main class="d-flex row ">
-      <div class="card text-center col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4  m-2 cardWidth" v-for="card in commonStore.getAllDataArray" :key="card.index">
+  <div class="d-flex row">
+      <div class="card mx-auto text-center col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4  m-2 cardWidth" v-for="card in commonStore.getAllDataArray" :key="card.index">
         <div class="card-header cardHeader">
            <h5>{{card.id}}</h5>
         </div>
@@ -38,7 +38,7 @@ const commonStore = useCommonStore()
             মোট জমা আছে = {{card.total}} টাকা
         </div>
       </div>
-  </main>
+  </div>
 </template>
 <style scoped>
 .cardHeader{
@@ -52,4 +52,5 @@ const commonStore = useCommonStore()
   color: green;
   font-weight: bold;
 }
+
 </style>
