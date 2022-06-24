@@ -70,7 +70,7 @@ onMounted(async ()=>{
                 <option  selected disabled value="">অপশন সিলেক্ট করুন</option>
                 <option value="জুম্মার দিনে দান বক্সে জমা">জুম্মার দিনে দান বক্সে জমা</option>
                 <option value="জুম্মার দিনে জিনিস-পত্র বিক্রয়">জুম্মার দিনে জিনিস-পত্র বিক্রয়</option>
-                <option value="মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা">মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা</option>
+                <option value="মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা">মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা</option>
             </select>
         </div>
         <div class="mb-3" v-if="information.Option!='' ">

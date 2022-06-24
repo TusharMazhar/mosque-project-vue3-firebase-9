@@ -1,6 +1,10 @@
 <script setup>
 import {useCommonStore} from '@/stores/common.js'
+import { useRouter} from 'vue-router'
+const router = useRouter()
 const commonStore = useCommonStore()
+
+
 </script>
 
 <template>
@@ -24,7 +28,7 @@ const commonStore = useCommonStore()
                 </div>
             </div>
           <div class="mt-4">
-            <button type="button" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+            <button type="button" @click="router.push(`/${commonStore.id1}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
           </div>
         </div>
         <div class="card-footer cardFooter">

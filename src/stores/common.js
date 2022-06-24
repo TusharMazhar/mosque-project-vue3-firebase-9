@@ -19,6 +19,10 @@ export const useCommonStore = defineStore({
     danBoxTotalAmountRemain:0,
     buySellTotalAmountRemain:0,
     masjidTotalImprovementAmountRemain:0,
+
+    id1:'জুম্মার দিনে দান বক্সে জমা',
+    id2:'জুম্মার দিনে জিনিস-পত্র বিক্রয়',
+    id3:"মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা"
   }),
   getters: {
     getLoginIdData: (state) => state.loginIdData,
@@ -49,7 +53,7 @@ export const useCommonStore = defineStore({
          }else if(item.Option==='জুম্মার দিনে জিনিস-পত্র বিক্রয়'){
             this.buySellTotalAmount += item.Amount
             this.buySellTotalAmountRemain = this.buySellTotalAmount - this.buySellTotalCost
-         }else if(item.Option==='মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা'){
+         }else if(item.Option==='মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা'){
             this.masjidTotalImprovementAmount += item.Amount
             this.masjidTotalImprovementAmountRemain = this.masjidTotalImprovementAmount - this.masjidTotalImprovementCost
          }
@@ -68,7 +72,7 @@ export const useCommonStore = defineStore({
          }else if(item.Option==='জুম্মার দিনে জিনিস-পত্র বিক্রয়'){
             this.buySellTotalCost += item.Amount
             this.buySellTotalAmountRemain = this.buySellTotalAmount - this.buySellTotalCost
-         }else if(item.Option==='মসজিদের উন্নয়ন/অনুষ্টানের জন্য জমা'){
+         }else if(item.Option==='মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা'){
             this.masjidTotalImprovementCost += item.Amount
             this.masjidTotalImprovementAmountRemain = this.masjidTotalImprovementAmount - this.masjidTotalImprovementCost
          }
