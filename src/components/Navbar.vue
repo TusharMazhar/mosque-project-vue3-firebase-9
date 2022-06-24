@@ -14,7 +14,7 @@ const modalOpenHandler = ()=>{
   <div class="container-fluid">
     <a class="navbar-brand title">হযরত শাহজালাল (র) জামে মসজিদ</a>
     <div class="">
-      <button @click="modalOpenHandler" class="btn btn-outline-success" type="submit">লগিন ( ৳{{commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain}} )</button>
+      <button @click="modalOpenHandler" class="btn btn-outline-success" type="submit">লগিন <span :style="{color:(commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain)<0?'red':'black'}">( ৳{{commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain}} )</span></button>
     </div>
   </div>
 </nav>
