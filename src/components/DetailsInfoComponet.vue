@@ -40,7 +40,7 @@ onMounted(()=>{
             <tbody>
                 <tr v-for="(item,index) in arrData" :key="index">
                     <th scope="row">{{index+1}}</th>
-                    <td>{{item.Date}}</td>
+                    <td>{{String(item.Date).substr(0,15)}}</td>
                     <td>{{item.Option}}</td>
                     <td v-if="route.params.id!='জুম্মার দিনে দান বক্সে জমা'">{{item.Name}}</td>
                     <td v-if="route.params.id!='জুম্মার দিনে দান বক্সে জমা'">0{{item.Phone}}</td>

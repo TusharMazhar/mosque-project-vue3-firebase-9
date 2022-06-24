@@ -36,7 +36,7 @@ onMounted(()=>{
             <tbody>
                 <tr v-for="(item,index) in arrData" :key="index">
                     <th scope="row">{{index+1}}</th>
-                    <td>{{item.Date}}</td>
+                    <td>{{String(item.Date).substr(0,15)}}</td>
                     <td>{{item.Reason}}</td>
                     <td>{{item.Amount}} টাকা</td>
                 </tr>
