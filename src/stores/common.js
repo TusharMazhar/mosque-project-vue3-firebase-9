@@ -22,7 +22,7 @@ export const useCommonStore = defineStore('main',{
 
     id1:'জুম্মার দিনে দান বক্সে জমা',
     id2:'জুম্মার দিনে জিনিস-পত্র বিক্রয়',
-    id3:"মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা"
+    id3:"মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা",
   }),
   getters: {
     getLoginIdData: (state) => state.loginIdData,
@@ -37,6 +37,31 @@ export const useCommonStore = defineStore('main',{
     getDanBoxTotalAmountRemain: (state) => state.danBoxTotalAmountRemain,
     getBuySellTotalAmountRemain: (state) => state.buySellTotalAmountRemain,
     getMasjidTotalImprovementAmountRemain: (state) => state.masjidTotalImprovementAmountRemain,
+
+
+    getAllDataArray: (state)=>{
+      const cardData = [
+         {
+           savings: state.danBoxTotalAmount,
+           id: state.id1,
+           costing: state.danBoxTotalCost,
+           total: state.danBoxTotalAmountRemain
+         },
+         {
+           savings: state.buySellTotalAmount,
+           id: state.id2,
+           costing: state.buySellTotalCost,
+           total: state.buySellTotalAmountRemain
+         },
+         {
+           savings: state.masjidTotalImprovementAmount,
+           id: state.id3,
+           costing: state.masjidTotalImprovementCost,
+           total: state.masjidTotalImprovementAmountRemain
+         }
+      ]
+      return cardData
+    }
   },
   actions: {
 

@@ -1,25 +1,25 @@
 <script setup>
 import {useCommonStore} from '@/stores/common.js'
 import { useRouter} from 'vue-router'
+import {ref} from 'vue'
 const router = useRouter()
 const commonStore = useCommonStore()
-
 
 </script>
 
 <template>
-  <main>
-      <div class="card text-center m-2 cardWidth">
+  <main class="d-flex ">
+      <div class="card text-center  m-2 cardWidth" v-for="card in commonStore.getAllDataArray" :key="card.index">
         <div class="card-header cardHeader">
-           <h5>জুম্মা দিনের দানবক্সের হিসাব</h5>
+           <h5>{{card.id}}</h5>
         </div>
         <div class="card-body">
           <div class="row">
                 <div class="col">
                     <p>জমা হয়েছে</p>
-                    <span>{{commonStore.getDanBoxTotalAmount}}</span>
+                    <span>{{card.savings}}</span>
                     <div class="mt-4">
-                      <button type="button" @click="router.push(`/${commonStore.id1}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+                      <button type="button" @click="router.push(`/${card.id}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
                     </div>
                 </div>
                 <div class="col">
@@ -27,15 +27,15 @@ const commonStore = useCommonStore()
                 </div>
                 <div class="col">
                     <p>খরচ হয়েছে</p>
-                    <span>{{commonStore.getDanBoxTotalCost}}</span>
+                    <span>{{card.costing}}</span>
                     <div class="mt-4">
-                      <button type="button" @click="router.push(`/cost/${commonStore.id1}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+                      <button type="button" @click="router.push(`/cost/${card.id}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-footer cardFooter">
-            মোট জমা আছে = {{commonStore.getDanBoxTotalAmountRemain}} টাকা
+            মোট জমা আছে = {{card.total}} টাকা
         </div>
       </div>
   </main>

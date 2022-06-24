@@ -1,40 +1,35 @@
 <script setup>
 import InputFiels from '@/components/InputFiels.vue'
 import CostFiels from '@/components/CostFiels.vue'
-import JummahBar from '@/components/JummahBarDanBox.vue'
-import JummahBarBikroyProduct from '@/components/JummahBarBikroyProduct.vue'
-import UnnoyonFund from '@/components/UnnoyonFund.vue'
+import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
 </script>
 
 <template>
 <div class="root">
-  <main class="d-flex justify-content-center "> 
-     <div class="row">
-        <div class="col">
-            <JummahBar />
+    <div class="overAllCalculation row">
+        <div>
+            <TotalAmountCalculation />
         </div>
-        <div class="col">
-           <JummahBarBikroyProduct />
-        </div>
-        <div class="col">
-            <UnnoyonFund />
-        </div>
-      </div>
-  </main>
-  <div>
-  <div class="row">
+    </div>
+
+    <div class="row">
         <div class="col">
             <InputFiels />
         </div>
         <div class="col">
-           <CostFiels />
+            <CostFiels />
         </div>
-      </div>
-  </div>
+    </div>
 </div>
+
 </template>
 
 <style scoped>
+.overAllCalculation{
+  border: 1px solid red;
+  width: 100%;
+  height: 400px
+}
 .root{
   box-sizing: border-box;
 }
