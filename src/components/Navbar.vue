@@ -47,25 +47,25 @@ const modalOpenHandler = ()=>{
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
+      <div class="carousel-item active" style="background-image: url('https://tasbihdigital.com/wp-content/uploads/2022/04/Masjid-Wallpaper-HD-Laptop.jpg');object-fit: contain">
         <div class="carousel-caption">
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
+      <div class="carousel-item" style="background-image: url('https://browsecat.net/sites/default/files/jama-masjid%2C-delhi-wallpapers-81979-819216-6420079.png');object-fit: contain">
         <div class="carousel-caption">
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/lHGeqh3XhRY/1920x1080')">
+      <div class="carousel-item" style="background-image: url('https://w0.peakpx.com/wallpaper/474/60/HD-wallpaper-jama-masjid-beautiful-mosque-background-tomb-historical-people.jpg');object-fit: contain">
         <div class="carousel-caption">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/lHGeqh3XhRY/1920x1080')">
+      <div class="carousel-item" style="background-image: url('https://wallpapercave.com/wp/wp2789163.jpg');object-fit: contain">
         <div class="carousel-caption">
           <h5>Forth slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
