@@ -6,10 +6,10 @@ import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
 
 <template>
 <div class="root">
-    <div class="overAllCalculation row">
-        <div>
-            <TotalAmountCalculation />
-        </div>
+    <div class="row">
+       <div> 
+          <TotalAmountCalculation />
+       </div>
     </div>
 
     <div class="row">
@@ -25,11 +25,7 @@ import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
 </template>
 
 <style scoped>
-.overAllCalculation{
-  border: 1px solid red;
-  width: 100%;
-  height: 400px
-}
+
 .root{
   box-sizing: border-box;
 }
