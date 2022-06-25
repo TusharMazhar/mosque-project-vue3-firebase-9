@@ -5,49 +5,39 @@ import {useCommonStore} from '@/stores/common.js'
 
 export function dataGetAddCost(){
 
-
     const commonStore = useCommonStore()
-
+    
     const getAllMasjidInformations = ref([])
     const loading = ref(false)
-
+    
     const information = ref({
         Option:'',
-        Name:'',
-        Phone: '',
-        Address:'',
-        Product:'',
         Amount:'',
+        Reason:'',
         Date: String(new Date())
     })
-
+    
         
     const informationStoreHandler = async ()=>{
             loading.value = true
             await addDoc(collection(db,'totaldevelopmentcost'),{
                 Option: information.value.Option,
-                Name: information.value.Name,
-                Phone: information.value.Phone,
-                Address: information.value.Address,
-                Product: information.value.Product,
                 Amount: information.value.Amount,
+                Reason: information.value.Reason,
                 Date: information.value.Date
             }).then(()=>{
-
+    
                 information.value.Option = ''
-                information.value.Name = ''
-                information.value.Phone = ''
-                information.value.Address = ''
-                information.value.Product = ''
                 information.value.Amount = ''
+                information.value.Reason = ''
                 information.value.Date = String(new Date())
-
+    
                 loading.value = false
-
+    
             })
-
+    
     }
-
+    
     const getAllMasjidInformation = async()=>{
         onSnapshot(collection(db,'totaldevelopmentcost'),(querySnapShot)=>{
         getAllMasjidInformations.value = []
@@ -55,11 +45,8 @@ export function dataGetAddCost(){
                 let data = {
                     id: doc.id,
                     Option: doc.data().Option,
-                    Name: doc.data().Name,
-                    Phone: doc.data().Phone,
-                    Address: doc.data().Address,
-                    Product: doc.data().Product,
                     Amount: doc.data().Amount,
+                    Reason: doc.data().Reason,
                     Date: doc.data().Date,
                 }
                 getAllMasjidInformations.value.push(data)
@@ -67,9 +54,9 @@ export function dataGetAddCost(){
             commonStore.storeAllInfoCost(getAllMasjidInformations.value)
         })
     }
-
+    
     onMounted(async ()=>{
-         await  getAllMasjidInformation()
+      await  getAllMasjidInformation()
     })
 
     return {
