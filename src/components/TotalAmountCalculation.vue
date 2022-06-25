@@ -19,7 +19,7 @@ const commonStore = useCommonStore()
                     <p>জমা হয়েছে</p>
                     <span>{{card.savings}}</span>
                     <div class="mt-4">
-                      <button type="button" @click="router.push(`/${card.id}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
+                      <button type="button" @click="router.push(`/amount/${card.id}`)" class="btn btn-outline-success">বিস্তারিত দেখুন</button>
                     </div>
                 </div>
                 <div class="col">

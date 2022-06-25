@@ -3,7 +3,7 @@ import {collection,onSnapshot,addDoc} from 'firebase/firestore'
 import {db} from '@/firebase'
 import {useCommonStore} from '@/stores/common.js'
 
-export function dataGetAdd(){
+export function dataGetAddAmount(){
 
     const commonStore = useCommonStore()
 
@@ -47,8 +47,8 @@ export function dataGetAdd(){
 
     }
 
-    const getAllMasjidInformation = async(value)=>{
-        onSnapshot(collection(db,value),(querySnapShot)=>{
+    const getAllMasjidInformation = async()=>{
+        onSnapshot(collection(db,'totaldevelopmentamount'),(querySnapShot)=>{
         getAllMasjidInformations.value = []
             querySnapShot.forEach(doc=>{
                 let data = {

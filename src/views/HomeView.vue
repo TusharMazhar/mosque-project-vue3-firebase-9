@@ -2,6 +2,10 @@
 import InputFiels from '@/components/InputFiels.vue'
 import CostFiels from '@/components/CostFiels.vue'
 import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
+import {dataGetAddAmount} from '@/use/dataGetAddAmount.js'
+import {dataGetAddCost} from '@/use/dataGetAddCost.js'
+dataGetAddAmount()
+dataGetAddCost()
 </script>
 
 <template>
@@ -11,15 +15,7 @@ import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
           <TotalAmountCalculation />
        </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <InputFiels />
-        </div>
-        <div class="col">
-            <CostFiels />
-        </div>
-    </div>
+    <!-- <CostFiels /> -->
 </div>
 
 </template>

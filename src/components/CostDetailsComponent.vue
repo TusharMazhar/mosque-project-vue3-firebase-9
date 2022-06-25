@@ -30,6 +30,7 @@ onMounted(()=>{
                     <th scope="col">#</th>
                     <th scope="col">তারিখ</th>
                     <th scope="col">কোন ক্ষেত্রে</th>
+                    <th scope="col">কি কারণে</th>
                     <th scope="col">টাকা</th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@ onMounted(()=>{
                 <tr v-for="(item,index) in arrData" :key="index">
                     <th scope="row">{{index+1}}</th>
                     <td>{{String(item.Date).substr(0,15)}}</td>
+                    <td>{{item.Option}}</td>
                     <td>{{item.Reason}}</td>
                     <td>{{item.Amount}} টাকা</td>
                 </tr>
