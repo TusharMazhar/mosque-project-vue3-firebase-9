@@ -47,7 +47,7 @@ const modalOpenHandler = ()=>{
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('https://tasbihdigital.com/wp-content/uploads/2022/04/Masjid-Wallpaper-HD-Laptop.jpg');object-fit: contain">
+      <div class="carousel-item active" style="background-image: url('https://cdn.pixabay.com/photo/2020/05/04/15/45/mosque-5129660__340.png');object-fit: contain">
         <div class="carousel-caption">
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
