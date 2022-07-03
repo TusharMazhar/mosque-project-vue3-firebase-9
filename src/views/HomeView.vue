@@ -23,7 +23,7 @@ dataGetAddCost()
 
     <div class="row">
        <div class="col"> <InputFiels /> </div>
-       <div class="col"> <CostFiels /> </div>
+       <!-- <div class="col"> <CostFiels /> </div> -->
     </div>
 </div>
 
