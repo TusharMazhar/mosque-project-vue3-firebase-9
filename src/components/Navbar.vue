@@ -11,7 +11,7 @@ const modalOpenHandler = ()=>{
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <h3 @click="router.push('/')" class="title">হযরত শাহজালাল (র) জামে মসজিদ</h3>
+    <h3 @click="router.push('/')" ><router-link to="/" class="nav-link title">হযরত শাহজালাল (র) জামে মসজিদ</router-link></h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,14 +22,14 @@ const modalOpenHandler = ()=>{
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
         </li> -->
-        <li class="nav=item">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/donate">দান করুন</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/store-information">তথ্য জমা</router-link>
+        </li>
+        <li class="nav-item">
            <button @click="modalOpenHandler" class="btn btn-outline-success" type="submit">লগিন <span :style="{color:(commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain)<0?'red':'black'}">( ৳{{commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain}} )</span></button>
         </li>
       </ul>

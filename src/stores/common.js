@@ -25,7 +25,8 @@ export const useCommonStore = defineStore('main',{
     id3:"মসজিদের উন্নয়ন অথবা অনুষ্টানের জন্য জমা",
 
     contributor:[],
-    contributorFinal:[]
+    contributorFinal:[],
+    allDataForIndividual:[]
   }),
   getters: {
     getContributorFinal: (state) => state.contributorFinal,
@@ -74,11 +75,13 @@ export const useCommonStore = defineStore('main',{
         this.contributorFinal = []
         let arr = []
         let newArr = []
+        this.allDataForIndividual = []
         
         this.allInfo.forEach((number)=>{
           arr.push(number.Phone)
+          this.allDataForIndividual.push(number)
         })
-
+        
         newArr = [...new Set(arr)]
 
         newArr.forEach(item=>{
@@ -91,13 +94,19 @@ export const useCommonStore = defineStore('main',{
             Name: '',
             Phone: '',
             Amount : 0,
-            Option:''
+            Option:'',
+            Date:'',
+            Paid:'',
+            Address:''
           }
           item.forEach(item2=>{
             person.Name = item2.Name
             person.Phone = item2.Phone
             person.Amount += item2.Amount
-            person.Option += item2.Option
+            person.Option = item2.Option
+            person.Date = item2.Date
+            person.Paid = item2.Amount
+            person.Address = item2.Address
           })
           this.contributorFinal.push(person)
         })

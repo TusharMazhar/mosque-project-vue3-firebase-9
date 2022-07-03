@@ -1,6 +1,7 @@
 <script setup>
 import {useCommonStore} from '@/stores/common.js'
-import {useRoute}  from 'vue-router'
+import {useRouter}  from 'vue-router'
+const router = useRouter()
 const commonStore = useCommonStore()
 
 
@@ -23,7 +24,7 @@ const commonStore = useCommonStore()
                        <span>{{item.Amount}} টাকা</span>
                     </div>
                     <div class=""> 
-                        <button class="p-1 px-3 btnColor">বিস্তারিত দেখুন</button>
+                        <button class="p-1 px-3 btnColor" @click="router.push(`/individual/donation/${item.Phone}`)">বিস্তারিত দেখুন</button>
                     </div>
                 </div>
             </div>

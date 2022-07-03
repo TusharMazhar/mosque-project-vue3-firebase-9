@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12">
             <h6>মসজিদ সম্পর্কে জানুন</h6>
-            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            <p class="text-justify">হযরত শাহজালাল (র) জামে মসজিদ ২০২২ সালের ১৩ই মে প্রতিষ্টিত হয়েছে। হবিগঞ্জ জেলার,চুনারঘাট উপজেলার গোগাউড়া গ্রামের প্রাণকেন্দ্র দর্শনীয় স্থান গোগাউড়া দীঘীর পাড়ের পশ্চিম পাশে মেইন রাস্তার পাশে মসজিদ অবস্থিত। </p>
           </div>
 
           <!-- <div class="col-xs-6 col-md-3">
