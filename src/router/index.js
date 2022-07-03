@@ -39,12 +39,12 @@ const router = createRouter({
     
   ]
 })
-let a = '1234555'
-router.beforeEach(async (to,from,next)=>{
-  if(a!='1234555'){
-    next({name: 'home'})
-  }else{
-    next()
-  }
-})
+// let a = '1234555'
+// router.beforeEach(async (to,from,next)=>{
+//   if(a!='1234555'){
+//     next({name: 'home'})
+//   }else{
+//     next()
+//   }
+// })
 export default router
