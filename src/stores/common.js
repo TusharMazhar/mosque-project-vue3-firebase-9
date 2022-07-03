@@ -90,12 +90,14 @@ export const useCommonStore = defineStore('main',{
           let person = {
             Name: '',
             Phone: '',
-            Amount : 0
+            Amount : 0,
+            Option:''
           }
           item.forEach(item2=>{
             person.Name = item2.Name
             person.Phone = item2.Phone
             person.Amount += item2.Amount
+            person.Option += item2.Option
           })
           this.contributorFinal.push(person)
         })

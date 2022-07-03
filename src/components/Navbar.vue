@@ -11,13 +11,13 @@ const modalOpenHandler = ()=>{
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">হযরত শাহজালাল (র) জামে মসজিদ</a>
+    <h3 @click="router.push('/')" class="title">হযরত শাহজালাল (র) জামে মসজিদ</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
@@ -28,7 +28,7 @@ const modalOpenHandler = ()=>{
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
-        </li>
+        </li> -->
         <li class="nav=item">
            <button @click="modalOpenHandler" class="btn btn-outline-success" type="submit">লগিন <span :style="{color:(commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain)<0?'red':'black'}">( ৳{{commonStore.getDanBoxTotalAmountRemain+commonStore.getBuySellTotalAmountRemain+commonStore.getMasjidTotalImprovementAmountRemain}} )</span></button>
         </li>
@@ -93,5 +93,8 @@ const modalOpenHandler = ()=>{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.title{
+  color: red
 }
 </style>
