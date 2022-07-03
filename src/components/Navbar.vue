@@ -11,7 +11,7 @@ const modalOpenHandler = ()=>{
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
-    <h5 @click="router.push('/')" ><router-link to="/" class="nav-link title">হযরত শাহজালাল (র) জামে মসজিদ</router-link></h5>
+    <h6 @click="router.push('/')" ><router-link to="/" class="nav-link title">হযরত শাহজালাল (র) জামে মসজিদ</router-link></h6>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
