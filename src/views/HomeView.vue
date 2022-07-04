@@ -1,4 +1,6 @@
 <script setup>
+import InputFiels from '@/components/InputFiels.vue'
+import CostFiels from '@/components/CostFiels.vue'
 import TotalAmountCalculation from '@/components/TotalAmountCalculation.vue'
 import Contribution from '@/components/Contribution.vue'
 import {dataGetAddAmount} from '@/use/dataGetAddAmount.js'
